@@ -1,0 +1,122 @@
+{
+  "cacheTimeout": null,
+  "colorBackground": true,
+  "colorValue": false,
+  "colors": [
+    null,
+    "rgba(191, 30, 45, 1)",
+    "rgba(119,170,51, 1)"
+  ],
+  "datasource": null,
+  "format": "none",
+  "gauge": {
+    "maxValue": 100,
+    "minValue": 0,
+    "show": false,
+    "thresholdLabels": false,
+    "thresholdMarkers": true
+  },
+  "height": "60px",
+  "id": 2,
+  "interval": "",
+  "links": [],
+  "mappingType": 1,
+  "mappingTypes": [
+    {
+      "name": "value to text",
+      "value": 1
+    },
+    {
+      "name": "range to text",
+      "value": 2
+    }
+  ],
+  "maxDataPoints": 100,
+  "nullPointMode": "connected",
+  "nullText": null,
+  "postfix": "",
+  "postfixFontSize": "50%",
+  "prefix": "",
+  "prefixFontSize": "50%",
+  "rangeMaps": [
+    {
+      "from": "null",
+      "text": "N/A",
+      "to": "null"
+    }
+  ],
+  "repeat": null,
+  "span": 2,
+  "sparkline": {
+    "fillColor": "rgba(255, 255, 255, 0.25)",
+    "full": false,
+    "lineColor": "rgba(255, 255, 255, 0.5)",
+    "show": false
+  },
+  "tableColumn": "",
+  "targets": [
+    {
+      "dsType": "influxdb",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "water",
+      "orderByTime": "ASC",
+      "policy": "autogen",
+      "query": "SELECT last(\"valueBinary\") FROM \"water\" WHERE \"deviceName\" = 'AC Water Sensor 1' AND $timeFilter GROUP BY time($__interval) fill(previous)",
+      "rawQuery": false,
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "valueBinary"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "deviceName",
+          "operator": "=",
+          "value": "AC Water Sensor 1"
+        }
+      ]
+    }
+  ],
+  "thresholds": "1,0",
+  "title": "FURNACE 1",
+  "transparent": true,
+  "type": "singlestat",
+  "valueFontSize": "70%",
+  "valueMaps": [
+    {
+      "op": "=",
+      "text": "DRY",
+      "value": "0"
+    },
+    {
+      "op": "=",
+      "text": "WET",
+      "value": "1"
+    }
+  ],
+  "valueName": "current"
+}

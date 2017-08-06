@@ -1,0 +1,28 @@
+{
+  "bgColor": null,
+  "clockType": "24 hour",
+  "countdownSettings": {
+    "endCountdownTime": "2017-08-07T20:28:00.000Z",
+    "endText": "00:00:00"
+  },
+  "dateSettings": {
+    "dateFormat": "YYYY-MM-DD",
+    "fontSize": "20px",
+    "fontWeight": "normal",
+    "showDate": false
+  },
+  "height": "100px",
+  "id": 8,
+  "links": [],
+  "mode": "time",
+  "offsetFromUtc": "0",
+  "offsetFromUtcMinutes": "0",
+  "span": 4,
+  "timeSettings": {
+    "customFormat": "HH:mm:ss",
+    "fontSize": "60px",
+    "fontWeight": "normal"
+  },
+  "title": "UTC TIME",
+  "type": "grafana-clock-panel"
+}

@@ -1,0 +1,123 @@
+{
+  "cacheTimeout": null,
+  "colorBackground": true,
+  "colorValue": false,
+  "colors": [
+    null,
+    "rgba(191, 30, 45, 1)",
+    "rgba(119,170,51, 1)"
+  ],
+  "datasource": null,
+  "format": "none",
+  "gauge": {
+    "maxValue": 100,
+    "minValue": 0,
+    "show": false,
+    "thresholdLabels": false,
+    "thresholdMarkers": true
+  },
+  "height": "60px",
+  "hideTimeOverride": true,
+  "id": 1,
+  "interval": "",
+  "links": [],
+  "mappingType": 1,
+  "mappingTypes": [
+    {
+      "name": "value to text",
+      "value": 1
+    },
+    {
+      "name": "range to text",
+      "value": 2
+    }
+  ],
+  "maxDataPoints": 100,
+  "nullPointMode": "connected",
+  "nullText": null,
+  "postfix": "",
+  "postfixFontSize": "50%",
+  "prefix": "",
+  "prefixFontSize": "50%",
+  "rangeMaps": [
+    {
+      "from": "null",
+      "text": "N/A",
+      "to": "null"
+    }
+  ],
+  "repeat": null,
+  "span": 2,
+  "sparkline": {
+    "fillColor": "rgba(255, 255, 255, 0.25)",
+    "full": false,
+    "lineColor": "rgba(255, 255, 255, 0.5)",
+    "show": false
+  },
+  "tableColumn": "",
+  "targets": [
+    {
+      "dsType": "influxdb",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "contact",
+      "orderByTime": "ASC",
+      "policy": "autogen",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "valueBinary"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "deviceName",
+          "operator": "=",
+          "value": "Garage Door"
+        }
+      ]
+    }
+  ],
+  "thresholds": "0,1",
+  "timeFrom": null,
+  "timeShift": null,
+  "title": "GARAGE DOOR",
+  "transparent": true,
+  "type": "singlestat",
+  "valueFontSize": "70%",
+  "valueMaps": [
+    {
+      "op": "=",
+      "text": "OPEN",
+      "value": "0"
+    },
+    {
+      "op": "=",
+      "text": "CLOSED",
+      "value": "1"
+    }
+  ],
+  "valueName": "current"
+}

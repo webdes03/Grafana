@@ -1,0 +1,114 @@
+{
+  "cacheTimeout": null,
+  "colorBackground": true,
+  "colorValue": false,
+  "colors": [
+    "rgba(24, 54, 133, 1)",
+    "rgba(119,170,51, 1)",
+    "rgba(191, 30, 45, 1)"
+  ],
+  "datasource": null,
+  "decimals": 1,
+  "format": "farenheit",
+  "gauge": {
+    "maxValue": 100,
+    "minValue": 0,
+    "show": false,
+    "thresholdLabels": false,
+    "thresholdMarkers": true
+  },
+  "height": "60px",
+  "id": 4,
+  "interval": null,
+  "links": [],
+  "mappingType": 1,
+  "mappingTypes": [
+    {
+      "name": "value to text",
+      "value": 1
+    },
+    {
+      "name": "range to text",
+      "value": 2
+    }
+  ],
+  "maxDataPoints": 100,
+  "nullPointMode": "connected",
+  "nullText": null,
+  "postfix": "",
+  "postfixFontSize": "50%",
+  "prefix": "",
+  "prefixFontSize": "50%",
+  "rangeMaps": [
+    {
+      "from": "null",
+      "text": "N/A",
+      "to": "null"
+    }
+  ],
+  "span": 2,
+  "sparkline": {
+    "fillColor": "rgba(255, 255, 255, 0.25)",
+    "full": false,
+    "lineColor": "rgba(255, 255, 255, 0.5)",
+    "show": true
+  },
+  "tableColumn": "",
+  "targets": [
+    {
+      "dsType": "influxdb",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        },
+        {
+          "params": [
+            "previous"
+          ],
+          "type": "fill"
+        }
+      ],
+      "measurement": "temperature",
+      "orderByTime": "ASC",
+      "policy": "autogen",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "value"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "last"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "deviceName",
+          "operator": "=",
+          "value": "Garage Motion Detector"
+        }
+      ]
+    }
+  ],
+  "thresholds": "32,90,110",
+  "title": "GARAGE TEMPERATURE",
+  "type": "singlestat",
+  "valueFontSize": "80%",
+  "valueMaps": [
+    {
+      "op": "=",
+      "text": "N/A",
+      "value": "null"
+    }
+  ],
+  "valueName": "first"
+}
