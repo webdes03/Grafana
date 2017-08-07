@@ -13,6 +13,7 @@ var weatherProperties = 'lat=NN.NNNNNN&lon=NN.NNNNNN&color=#FFFFFF&text-color=#F
 document.getElementById('embedweather').src = 'http://forecast.io/embed/?ts=' + (Date.now()) + '#' + weatherProperties;
 
 // refresh
-var weatherRefresh = setTimeout(function() { document.getElementById('embedweather').src = 'http://forecast.io/embed/?ts=' + (Date.now()) + '#' + weatherProperties; }, 60000);
+var weatherRefresh = setTimeout(function() { document.getElementById('embedweather').src = 'http://forecast.io/embed/?ts=' + (Date.now()) + '#' + weatherProperties; }, 1800000);
+
 </script>
 <iframe id="embedweather" height="100%" src="#" style="margin: 0; padding: 0; border: none; width:100%; position:relative; top:-50px; overflow:hidden; margin-bottom: -70px;"></iframe>
