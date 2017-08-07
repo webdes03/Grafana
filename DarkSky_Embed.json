@@ -1,0 +1,11 @@
+{
+  "content": "<style type=\"text/css\">\np.markdown-html.panel-text-content {\noverflow: hidden;\n}\np.markdown-html.panel-text-content iframe {\nheight:225px;\n}\n</style>\n<script type=\"text/javascript\">\nvar weatherProperties = 'lat=NN.NNNN&lon=NN.NNNN&color=#FFFFFF&text-color=#FFFFFF';\n\n// initial load\ndocument.getElementById('embedweather').src = 'http://forecast.io/embed/?ts=' + (Date.now()) + '#' + weatherProperties;\n\n// refresh\nvar weatherRefresh = setInterval(function() { document.getElementById('embedweather').src = 'http://forecast.io/embed/?ts=' + (Date.now()) + '#' + weatherProperties; }, 900000);\n</script>\n<iframe id=\"embedweather\" height=\"100%\" src=\"#\" style=\"margin: 0; padding: 0; border: none; width:100%; position:relative; top:-50px; overflow:hidden; margin-bottom: -70px;\"></iframe>",
+  "height": "120px",
+  "id": 13,
+  "links": [],
+  "mode": "html",
+  "span": 6,
+  "title": "",
+  "transparent": true,
+  "type": "text"
+}
